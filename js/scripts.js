@@ -1,46 +1,49 @@
 function Game () {
   this.players = [];
-  // this.currentId = 0;
-  // this.score = 0;
 }
 
 Game.prototype.addPlayer = function(player) {
-  // player.id = this.assignId();
   this.players.push(player);
 }
 
-function Player() {
+function Player(name) {
   this.currentScore = 0;
   this.totalScore = 0;
+  this.name = name;
 }
 
-let playerOne = new Player("Player One");
-let playerTwo = new Player("Player Two");
-
-
-
-Player.prototype.roll = function () {
-  let roll = Math.floor((Math.random() * 6 ) +1 ); 
+Player.prototype.dice = function(rollDice) {
+  let  = randomDice();
 }
-
-
-// function getRandomInt(max) {
-//   return Math.floor(Math.random() * Math.floor(max));
-// }
-
-
-// Game.prototype.assignId = function() {
-//   this.currentId += 1;
-//   return this.currentId;
-// }
-//loop that runs thru minium 7 with Math.random
-
 
 // User Interface Logic --------------------
 
-$(document).ready(function() {
-  const player1 = $("#player-one").val();
-  const player2 = $("#player-two").val();
-
+function randomDice(){
+  let roll = Math.floor(Math.random() * 6)+1;
+  $(".roll").click(function() {
+    $("").show(this.currentScore); // player1.currentscore();
+    return roll
+  });
+  
   
 }
+
+
+
+let game = new Game();
+$(document).ready(function() {
+  $("#new-game").submit(function(event) {
+    event.preventDefault();
+    const player1 = $("#player1").val();
+    const player2 = $("#player2").val();
+
+    $("#player1").val("");
+    $("#player2").val("")
+
+    let playerOne = new Player(player1);
+    let playerTwo = new Player(player2);
+
+    game.addPlayer(playerOne);
+    game.addPlayer(playerTwo);
+  });
+});

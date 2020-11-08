@@ -12,26 +12,49 @@
 <body>
   <div class="container">
     <h1>Pig Dice Game!</h1>
-      <form id="new-game">
-        <div class="form-group">
-          <div class="row">
-            <div class="col-md-6">
-              <label for="player-one">Name of Player One</label>
-              <input type="text" class="form-control" id="player-one">
-              <button class="btn-primary roll">Roll</button>
-              <button class="btn-primary hold">Hold</button>
-            </div> 
-        </div>
-          <div class="form-group">
-            <div class="col-md-6">
-              <label for="player-two">Name of Player Two</label>
-              <input type="text" class="form-control" id="player-two">
-              <button class="btn-primary roll">Roll</button>
-              <button class="btn-primary hold">Hold</button>
-            </div>
+    <form id="new-game">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="input-group">
+            <label for="player1">
+              <h4>Player 1</h4>
+              <input id="player1" type="text" class="form-control">
+            </label>
           </div>
-        </div>  
-      </form>
+        </div>
+        <div class="col-lg-6">
+          <div class="input-group">
+            <label for="player2">
+              <h4>Player 2</h4>
+              <input id="player2" type="text" class="form-control">
+            </label>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn-lg btn-primary">Start Game!</button>
+    </form>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <img src="https://images-na.ssl-images-amazon.com/images/I/61q9XfIJa5L._AC_SX522_.jpg" alt="Picture of pig">
+          <div id="player-one"></div>
+          <h4 id="current-score">Current Score:</h4>
+          <h4 id="total-score">Total Score:</h4>
+          <button class="btn-sm btn-danger roll">Roll</button>
+          <button class="btn-sm btn-success hold">Hold</button>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <img src="https://cdn.vox-cdn.com/thumbor/ujrT6v-kBo2JS_1xXf4pd0YjS7w=/0x0:5000x3200/1200x800/filters:focal(2652x1434:3452x2234)/cdn.vox-cdn.com/uploads/chorus_image/image/65449715/cute_pig_GettyImages_847218080.0.jpg" alt="Picture of a cute pig">
+          <div id="player-two"></div>
+          <h4 id="current-score">Current Score:</h4>
+          <h4 id="total-score">Total Score:</h4>
+          <button class="btn-sm btn-danger roll">Roll</button>
+          <button class="btn-sm btn-success hold">Hold</button>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 </html>
